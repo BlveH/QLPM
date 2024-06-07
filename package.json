@@ -1,0 +1,14 @@
+{
+  "name": "MEVEN",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dbup": "docker compose -f database/docker-compose.yml up -d",
+    "dbdown": "docker compose -f database/docker-compose.yml down",
+    "rsdb": "yarn dbdown && rimraf database/mysql && rimraf uploads && rimraf emojis/*.svg && yarn dbup"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7"
+  }
+}

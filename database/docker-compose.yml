@@ -1,0 +1,26 @@
+services:
+  mysql:
+    image: mysql:oracle
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: QLPM
+      MYSQL_ROOT_PASSWORD: blue000
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - nso
+  phpmyadmin:
+    image: phpmyadmin:apache
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - 80:80
+    environment:
+      - MYSQL_ROOT_PASSWORD=blue000
+      - PMA_HOST=mysql
+    networks:
+      - nso
+networks:
+  nso:
