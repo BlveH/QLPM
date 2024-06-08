@@ -5,6 +5,8 @@
  */
 package view;
 
+import Connection.ConnectionPool;
+import Connection.ConnectionPoolImpl;
 import Service.AccountService;
 import javax.swing.JOptionPane;
 import object.Account;
@@ -139,7 +141,8 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        ConnectionPoolImpl connectionPool = new ConnectionPoolImpl();
+        connectionPool.getConnection();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

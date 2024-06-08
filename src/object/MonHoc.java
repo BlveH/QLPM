@@ -7,7 +7,7 @@ package object;
 
 /**
  *
- * @author Truong
+ * @author BlveH
  */
 public class MonHoc {
     private String maMonHoc;
